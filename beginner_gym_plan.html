@@ -1,0 +1,434 @@
+
+<h2 class="sr-only">5-day beginner gym plan for aggressive weight loss</h2>
+<style>
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.5rem}
+.tab{padding:6px 14px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);font-size:13px;cursor:pointer;color:var(--color-text-secondary);transition:all .15s}
+.tab.active{background:#1D9E75;color:#E1F5EE;border-color:#0F6E56;font-weight:500}
+.day-panel{display:none}.day-panel.active{display:block}
+.ex-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;margin-bottom:12px}
+.ex-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.ex-num{width:28px;height:28px;border-radius:50%;background:#E1F5EE;color:#0F6E56;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;flex-shrink:0}
+.ex-name{font-size:15px;font-weight:500;color:var(--color-text-primary)}
+.ex-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.pill{font-size:11px;padding:3px 10px;border-radius:20px;font-weight:500}
+.pill-g{background:#EAF3DE;color:#3B6D11}
+.pill-b{background:#E6F1FB;color:#185FA5}
+.pill-a{background:#FAEEDA;color:#854F0B}
+.section-label{font-size:11px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.05em;margin:8px 0 4px}
+.form-steps{list-style:none;padding:0;margin:0}
+.form-steps li{font-size:13px;color:var(--color-text-secondary);line-height:1.6;padding:2px 0;padding-left:16px;position:relative}
+.form-steps li::before{content:"→";position:absolute;left:0;color:#1D9E75;font-size:11px;top:3px}
+.alts{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.alt-tag{font-size:12px;padding:3px 10px;border-radius:20px;background:var(--color-background-secondary);color:var(--color-text-secondary);border:0.5px solid var(--color-border-tertiary)}
+.cardio-box{background:#E1F5EE;border:0.5px solid #5DCAA5;border-radius:var(--border-radius-lg);padding:1rem 1.25rem;margin-top:4px;display:flex;align-items:center;gap:12px}
+.day-title{font-size:18px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px}
+.day-sub{font-size:13px;color:var(--color-text-secondary);margin-bottom:1rem}
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:1.5rem}
+.stat-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:.75rem 1rem}
+.stat-label{font-size:11px;color:var(--color-text-secondary);margin-bottom:4px}
+.stat-val{font-size:20px;font-weight:500;color:var(--color-text-primary)}
+.stat-note{font-size:11px;color:#1D9E75}
+.warn-box{background:#FAEEDA;border:0.5px solid #EF9F27;border-radius:var(--border-radius-md);padding:.75rem 1rem;font-size:13px;color:#854F0B;margin-bottom:1.5rem;line-height:1.6}
+.toggle-btn{font-size:12px;color:#185FA5;background:none;border:none;cursor:pointer;padding:0;margin-top:6px}
+.details{display:none;margin-top:8px}
+.details.open{display:block}
+</style>
+
+<div style="padding:1rem 0">
+<div class="stats-row">
+  <div class="stat-card"><div class="stat-label">your weight</div><div class="stat-val">94 kg</div><div class="stat-note">BMI ~32.5</div></div>
+  <div class="stat-card"><div class="stat-label">daily calories</div><div class="stat-val">1,210</div><div class="stat-note">~1,750 kcal deficit</div></div>
+  <div class="stat-card"><div class="stat-label">daily protein</div><div class="stat-val">140 g</div><div class="stat-note">~1.5g/kg — solid</div></div>
+  <div class="stat-card"><div class="stat-label">gym days</div><div class="stat-val">5 days</div><div class="stat-note">Mon–Fri</div></div>
+</div>
+
+<div class="warn-box">
+  <strong>heads up:</strong> 1,210 kcal/day is very aggressive for your size. your maintenance is ~2,900–3,000 kcal. this deficit is safe short-term but keep energy levels in check — if you feel dizzy or very fatigued during workouts, add 200–300 kcal from paneer or curd. protein intake (140g) is great — this protects muscle while you lose fat.
+</div>
+
+<div class="tabs" id="tabs">
+  <button class="tab active" onclick="showDay('mon',this)">Mon — Push</button>
+  <button class="tab" onclick="showDay('tue',this)">Tue — Pull</button>
+  <button class="tab" onclick="showDay('wed',this)">Wed — Legs</button>
+  <button class="tab" onclick="showDay('thu',this)">Thu — Upper</button>
+  <button class="tab" onclick="showDay('fri',this)">Fri — Full</button>
+</div>
+
+<div id="mon" class="day-panel active">
+<div class="day-title">Monday — Push</div>
+<div class="day-sub">Chest · Shoulders · Triceps &nbsp;|&nbsp; 60 min weights + 30 min cardio</div>
+
+<div class="ex-card">
+  <div class="ex-header"><div class="ex-num">1</div><div class="ex-name">Machine Chest Press</div></div>
+  <div class="ex-meta"><span class="pill pill-g">3 sets × 12 reps</span><span class="pill pill-b">Rest 60 sec</span><span class="pill pill-a">Light–Moderate weight</span></div>
+  <div class="section-label">how to do it</div>
+  <ul class="form-steps">
+    <li>Sit on the machine, adjust seat so handles are at chest height</li>
+    <li>Grip handles with palms facing forward, feet flat on floor</li>
+    <li>Push handles forward until arms are almost straight — don't lock out</li>
+    <li>Slowly bring handles back until you feel a stretch in your chest (2 sec)</li>
+    <li>Keep your back flat against the pad throughout — don't arch</li>
+  </ul>
+  <div class="section-label">alternatives</div>
+  <div class="alts"><span class="alt-tag">Dumbbell Chest Press</span><span class="alt-tag">Smith Machine Bench</span><span class="alt-tag">Push-ups</span></div>
+</div>
+
+<div class="ex-card">
+  <div class="ex-header"><div class="ex-num">2</div><div class="ex-name">Machine Shoulder Press</div></div>
+  <div class="ex-meta"><span class="pill pill-g">3 sets × 12 reps</span><span class="pill pill-b">Rest 60 sec</span><span class="pill pill-a">Light weight</span></div>
+  <div class="section-label">how to do it</div>
+  <ul class="form-steps">
+    <li>Adjust seat so handles are at shoulder height</li>
+    <li>Grip handles, elbows bent at ~90°, core tight</li>
+    <li>Press upward until arms are almost fully extended</li>
+    <li>Lower slowly back to start — don't drop the weight</li>
+    <li>Breathe out when pushing up, breathe in when lowering</li>
+  </ul>
+  <div class="section-label">alternatives</div>
+  <div class="alts"><span class="alt-tag">Dumbbell Shoulder Press</span><span class="alt-tag">Arnold Press</span><span class="alt-tag">Cable Overhead Press</span></div>
+</div>
+
+<div class="ex-card">
+  <div class="ex-header"><div class="ex-num">3</div><div class="ex-name">Cable Tricep Pushdown</div></div>
+  <div class="ex-meta"><span class="pill pill-g">3 sets × 15 reps</span><span class="pill pill-b">Rest 45 sec</span><span class="pill pill-a">Light weight</span></div>
+  <div class="section-label">how to do it</div>
+  <ul class="form-steps">
+    <li>Stand at cable machine, attach rope or straight bar at top pulley</li>
+    <li>Grip the attachment, elbows locked close to your sides — they must NOT move</li>
+    <li>Push the bar/rope down until arms are fully straight</li>
+    <li>Slowly let it rise back up until forearms are parallel to floor</li>
+    <li>Squeeze your triceps hard at the bottom of each rep</li>
+  </ul>
+  <div class="section-label">alternatives</div>
+  <div class="alts"><span class="alt-tag">Dumbbell Kickback</span><span class="alt-tag">Overhead Tricep Extension</span><span class="alt-tag">Bench Dips</span></div>
+</div>
+
+<div class="ex-card">
+  <div class="ex-header"><div class="ex-num">4</div><div class="ex-name">Dumbbell Lateral Raise</div></div>
+  <div class="ex-meta"><span class="pill pill-g">3 sets × 15 reps</span><span class="pill pill-b">Rest 45 sec</span><span class="pill pill-a">Very light (5–8 kg)</span></div>
+  <div class="section-label">how to do it</div>
+  <ul class="form-steps">
+    <li>Stand holding dumbbells at your sides, slight bend in elbows</li>
+    <li>Raise both arms out to the sides until level with shoulders</li>
+    <li>Tilt your pinkies slightly up at the top (like pouring water)</li>
+    <li>Lower slowly in 2–3 seconds — don't let them drop</li>
+    <li>No swinging — keep your body still throughout</li>
+  </ul>
+  <div class="section-label">alternatives</div>
+  <div class="alts"><span class="alt-tag">Cable Lateral Raise</span><span class="alt-tag">Machine Lateral Raise</span><span class="alt-tag">Bent-over Lateral Raise</span></div>
+</div>
+
+<div class="cardio-box">
+  <i class="ti ti-run" style="font-size:24px;color:#0F6E56" aria-hidden="true"></i>
+  <div>
+    <div style="font-size:14px;font-weight:500;color:#085041">30 min treadmill — incline walk</div>
+    <div style="font-size:12px;color:#0F6E56;margin-top:2px">Speed: 5–6 km/h · Incline: 5–8% · This burns ~200–280 extra kcal and preserves muscle vs running</div>
+  </div>
+</div>
+</div>
+
+<div id="tue" class="day-panel">
+<div class="day-title">Tuesday — Pull</div>
+<div class="day-sub">Back · Biceps · Rear Delts &nbsp;|&nbsp; 60 min weights + 30 min cardio</div>
+
+<div class="ex-card">
+  <div class="ex-header"><div class="ex-num">1</div><div class="ex-name">Lat Pulldown</div></div>
+  <div class="ex-meta"><span class="pill pill-g">3 sets × 12 reps</span><span class="pill pill-b">Rest 60 sec</span><span class="pill pill-a">Moderate weight</span></div>
+  <div class="section-label">how to do it</div>
+  <ul class="form-steps">
+    <li>Sit at the machine, lock thighs under the pad, grip bar wider than shoulder width</li>
+    <li>Lean back slightly (~15°), chest up — this is your start position</li>
+    <li>Pull the bar down to your upper chest, lead with your elbows going to your hips</li>
+    <li>Squeeze your back/lats hard at the bottom for 1 sec</li>
+    <li>Slowly let the bar rise back up over 2–3 seconds, feel the stretch</li>
+  </ul>
+  <div class="section-label">alternatives</div>
+  <div class="alts"><span class="alt-tag">Assisted Pull-up Machine</span><span class="alt-tag">Cable Pulldown (neutral grip)</span><span class="alt-tag">Single-arm Pulldown</span></div>
+</div>
+
+<div class="ex-card">
+  <div class="ex-header"><div class="ex-num">2</div><div class="ex-name">Seated Cable Row</div></div>
+  <div class="ex-meta"><span class="pill pill-g">3 sets × 12 reps</span><span class="pill pill-b">Rest 60 sec</span><span class="pill pill-a">Moderate weight</span></div>
+  <div class="section-label">how to do it</div>
+  <ul class="form-steps">
+    <li>Sit at cable row machine, feet on platform, slight knee bend</li>
+    <li>Grip the handle (V-grip or straight bar), sit up straight — don't hunch</li>
+    <li>Pull the handle to your belly button, squeezing shoulder blades together</li>
+    <li>Your elbows should go past your torso, close to your body</li>
+    <li>Slowly extend arms back to start — don't round your lower back</li>
+  </ul>
+  <div class="section-label">alternatives</div>
+  <div class="alts"><span class="alt-tag">Machine Row</span><span class="alt-tag">Dumbbell Row (one arm)</span><span class="alt-tag">T-bar Row</span></div>
+</div>
+
+<div class="ex-card">
+  <div class="ex-header"><div class="ex-num">3</div><div class="ex-name">Dumbbell Bicep Curl</div></div>
+  <div class="ex-meta"><span class="pill pill-g">3 sets × 15 reps</span><span class="pill pill-b">Rest 45 sec</span><span class="pill pill-a">Light weight</span></div>
+  <div class="section-label">how to do it</div>
+  <ul class="form-steps">
+    <li>Stand holding dumbbells at your sides, palms facing forward</li>
+    <li>Curl both dumbbells up toward your shoulders — elbows stay fixed at your sides</li>
+    <li>Squeeze your biceps hard at the top</li>
+    <li>Lower slowly (3 sec) — don't just drop them</li>
+    <li>No swinging your back — if you are, the weight is too heavy</li>
+  </ul>
+  <div class="section-label">alternatives</div>
+  <div class="alts"><span class="alt-tag">Cable Curl</span><span class="alt-tag">Hammer Curl</span><span class="alt-tag">Preacher Curl Machine</span></div>
+</div>
+
+<div class="ex-card">
+  <div class="ex-header"><div class="ex-num">4</div><div class="ex-name">Face Pull (cable)</div></div>
+  <div class="ex-meta"><span class="pill pill-g">3 sets × 15 reps</span><span class="pill pill-b">Rest 45 sec</span><span class="pill pill-a">Very light</span></div>
+  <div class="section-label">how to do it</div>
+  <ul class="form-steps">
+    <li>Set cable pulley to face/eye height, attach rope handle</li>
+    <li>Grab rope with both hands, thumbs pointing up, step back 2 steps</li>
+    <li>Pull the rope toward your face — split the rope as you pull (hands go to ears)</li>
+    <li>Elbows should stay high (at shoulder level or above)</li>
+    <li>Pause at full pull, then slowly let it extend back</li>
+  </ul>
+  <div class="section-label">alternatives</div>
+  <div class="alts"><span class="alt-tag">Rear Delt Fly (dumbbell)</span><span class="alt-tag">Band Pull-apart</span><span class="alt-tag">Reverse Pec Deck</span></div>
+</div>
+
+<div class="cardio-box">
+  <i class="ti ti-run" style="font-size:24px;color:#0F6E56" aria-hidden="true"></i>
+  <div>
+    <div style="font-size:14px;font-weight:500;color:#085041">30 min treadmill — steady walk</div>
+    <div style="font-size:12px;color:#0F6E56;margin-top:2px">Speed: 5.5 km/h · Incline: 4–6% · You can also do elliptical here for low-impact cardio</div>
+  </div>
+</div>
+</div>
+
+<div id="wed" class="day-panel">
+<div class="day-title">Wednesday — Legs + Core</div>
+<div class="day-sub">Quads · Hamstrings · Glutes · Core &nbsp;|&nbsp; 60 min weights + 30 min cardio</div>
+
+<div class="ex-card">
+  <div class="ex-header"><div class="ex-num">1</div><div class="ex-name">Leg Press Machine</div></div>
+  <div class="ex-meta"><span class="pill pill-g">4 sets × 15 reps</span><span class="pill pill-b">Rest 75 sec</span><span class="pill pill-a">Moderate weight</span></div>
+  <div class="section-label">how to do it</div>
+  <ul class="form-steps">
+    <li>Sit in the machine, place feet shoulder-width apart on the platform, toes slightly out</li>
+    <li>Feet placement: mid-to-high on the platform for more glutes/hamstrings</li>
+    <li>Release the safety, lower the platform until knees are at ~90° angle</li>
+    <li>Push through your heels — don't let knees cave inward</li>
+    <li>Don't lock your knees at the top — keep a slight bend</li>
+  </ul>
+  <div class="section-label">alternatives</div>
+  <div class="alts"><span class="alt-tag">Goblet Squat (dumbbell)</span><span class="alt-tag">Smith Machine Squat</span><span class="alt-tag">Hack Squat Machine</span></div>
+</div>
+
+<div class="ex-card">
+  <div class="ex-header"><div class="ex-num">2</div><div class="ex-name">Leg Curl Machine (seated or lying)</div></div>
+  <div class="ex-meta"><span class="pill pill-g">3 sets × 15 reps</span><span class="pill pill-b">Rest 60 sec</span><span class="pill pill-a">Light–Moderate</span></div>
+  <div class="section-label">how to do it</div>
+  <ul class="form-steps">
+    <li>Sit/lie on the machine as the label shows, position pad just above ankles</li>
+    <li>Curl your legs back toward your glutes as far as possible</li>
+    <li>Squeeze your hamstrings hard at the peak for 1 sec</li>
+    <li>Lower back slowly — take 2–3 seconds on the way down</li>
+    <li>Don't lift your hips off the seat to cheat the rep</li>
+  </ul>
+  <div class="section-label">alternatives</div>
+  <div class="alts"><span class="alt-tag">Dumbbell Romanian Deadlift</span><span class="alt-tag">Nordic Curl (assisted)</span><span class="alt-tag">Cable Pull-through</span></div>
+</div>
+
+<div class="ex-card">
+  <div class="ex-header"><div class="ex-num">3</div><div class="ex-name">Leg Extension Machine</div></div>
+  <div class="ex-meta"><span class="pill pill-g">3 sets × 15 reps</span><span class="pill pill-b">Rest 60 sec</span><span class="pill pill-a">Light–Moderate</span></div>
+  <div class="section-label">how to do it</div>
+  <ul class="form-steps">
+    <li>Adjust the backrest so your knees hang at the edge of the seat</li>
+    <li>Pad should rest just above your ankles (not on your shins)</li>
+    <li>Extend legs forward until straight, squeeze quads at the top</li>
+    <li>Lower slowly — don't let the weight crash down</li>
+    <li>Toes can point forward or slightly outward — comfortable for you</li>
+  </ul>
+  <div class="section-label">alternatives</div>
+  <div class="alts"><span class="alt-tag">Lunges (bodyweight)</span><span class="alt-tag">Step-ups (on bench)</span><span class="alt-tag">Wall Sit</span></div>
+</div>
+
+<div class="ex-card">
+  <div class="ex-header"><div class="ex-num">4</div><div class="ex-name">Plank + Crunches (Core)</div></div>
+  <div class="ex-meta"><span class="pill pill-g">Plank: 3×30–45 sec · Crunch: 3×20</span><span class="pill pill-b">Rest 45 sec</span></div>
+  <div class="section-label">how to do it — plank</div>
+  <ul class="form-steps">
+    <li>Forearms on floor, elbows under shoulders, toes on floor</li>
+    <li>Body must be a straight line from head to heels — don't let hips sag or rise</li>
+    <li>Squeeze your belly button toward your spine, breathe normally</li>
+  </ul>
+  <div class="section-label">how to do it — crunch</div>
+  <ul class="form-steps">
+    <li>Lie on back, knees bent, hands lightly behind head (don't pull neck)</li>
+    <li>Curl shoulders off the floor using your abs — only come up ~30–40°</li>
+    <li>Lower back slowly — don't bounce</li>
+  </ul>
+  <div class="section-label">alternatives</div>
+  <div class="alts"><span class="alt-tag">Dead Bug</span><span class="alt-tag">Bicycle Crunch</span><span class="alt-tag">Leg Raises</span></div>
+</div>
+
+<div class="cardio-box">
+  <i class="ti ti-run" style="font-size:24px;color:#0F6E56" aria-hidden="true"></i>
+  <div>
+    <div style="font-size:14px;font-weight:500;color:#085041">30 min treadmill — your choice</div>
+    <div style="font-size:12px;color:#0F6E56;margin-top:2px">After leg day your legs are tired — keep incline low (2–3%) or use the elliptical/bike instead</div>
+  </div>
+</div>
+</div>
+
+<div id="thu" class="day-panel">
+<div class="day-title">Thursday — Upper Body Compound</div>
+<div class="day-sub">Full upper body with heavier compound moves &nbsp;|&nbsp; 60 min weights + 30 min cardio</div>
+
+<div class="ex-card">
+  <div class="ex-header"><div class="ex-num">1</div><div class="ex-name">Smith Machine / Assisted Bench Press</div></div>
+  <div class="ex-meta"><span class="pill pill-g">3 sets × 10 reps</span><span class="pill pill-b">Rest 75 sec</span><span class="pill pill-a">Moderate weight</span></div>
+  <div class="section-label">how to do it</div>
+  <ul class="form-steps">
+    <li>Lie on bench under the smith machine bar, grip slightly wider than shoulders</li>
+    <li>Arch your back slightly, feet flat, shoulder blades squeezed together and down</li>
+    <li>Unrack the bar, lower it slowly to your lower chest (2–3 sec)</li>
+    <li>Press back up explosively — don't bounce off your chest</li>
+    <li>Smith machine is safer for beginners — the bar is on a fixed track</li>
+  </ul>
+  <div class="section-label">alternatives</div>
+  <div class="alts"><span class="alt-tag">Dumbbell Bench Press</span><span class="alt-tag">Machine Chest Press</span><span class="alt-tag">Incline Dumbbell Press</span></div>
+</div>
+
+<div class="ex-card">
+  <div class="ex-header"><div class="ex-num">2</div><div class="ex-name">Dumbbell Row (one arm)</div></div>
+  <div class="ex-meta"><span class="pill pill-g">3 sets × 12 reps each side</span><span class="pill pill-b">Rest 60 sec</span><span class="pill pill-a">Moderate weight</span></div>
+  <div class="section-label">how to do it</div>
+  <ul class="form-steps">
+    <li>Place left knee and left hand on bench for support, right foot on floor</li>
+    <li>Hold dumbbell in right hand, let it hang straight down</li>
+    <li>Pull the dumbbell up toward your hip, elbow going up and back</li>
+    <li>Squeeze your back at the top — hold 1 sec</li>
+    <li>Lower slowly. Repeat on other side</li>
+  </ul>
+  <div class="section-label">alternatives</div>
+  <div class="alts"><span class="alt-tag">Machine Row</span><span class="alt-tag">Cable Row</span><span class="alt-tag">Meadows Row</span></div>
+</div>
+
+<div class="ex-card">
+  <div class="ex-header"><div class="ex-num">3</div><div class="ex-name">Dumbbell Shoulder Press (seated)</div></div>
+  <div class="ex-meta"><span class="pill pill-g">3 sets × 12 reps</span><span class="pill pill-b">Rest 60 sec</span><span class="pill pill-a">Light–Moderate</span></div>
+  <div class="section-label">how to do it</div>
+  <ul class="form-steps">
+    <li>Sit on an incline bench (set upright), hold dumbbells at shoulder height</li>
+    <li>Palms facing forward, elbows at ~90° to start</li>
+    <li>Press both dumbbells upward until arms are nearly straight</li>
+    <li>Lower them slowly back to shoulder height — don't go below</li>
+    <li>Keep your core braced — don't lean back excessively</li>
+  </ul>
+  <div class="section-label">alternatives</div>
+  <div class="alts"><span class="alt-tag">Machine Shoulder Press</span><span class="alt-tag">Cable Shoulder Press</span><span class="alt-tag">Barbell OHP (later)</span></div>
+</div>
+
+<div class="ex-card">
+  <div class="ex-header"><div class="ex-num">4</div><div class="ex-name">Assisted Tricep Dips / Bench Dips</div></div>
+  <div class="ex-meta"><span class="pill pill-g">3 sets × 12 reps</span><span class="pill pill-b">Rest 60 sec</span><span class="pill pill-a">Bodyweight or assisted</span></div>
+  <div class="section-label">how to do it — bench dip (easier)</div>
+  <ul class="form-steps">
+    <li>Sit on edge of bench, hands gripping edge beside your hips, feet forward</li>
+    <li>Slide your butt off the bench, lower your body by bending elbows to ~90°</li>
+    <li>Push back up — don't flare elbows too wide</li>
+    <li>Keep your back close to the bench throughout</li>
+    <li>To make it harder: put feet on another bench</li>
+  </ul>
+  <div class="section-label">alternatives</div>
+  <div class="alts"><span class="alt-tag">Cable Pushdown</span><span class="alt-tag">Overhead DB Extension</span><span class="alt-tag">Assisted Dip Machine</span></div>
+</div>
+
+<div class="cardio-box">
+  <i class="ti ti-run" style="font-size:24px;color:#0F6E56" aria-hidden="true"></i>
+  <div>
+    <div style="font-size:14px;font-weight:500;color:#085041">30 min incline treadmill</div>
+    <div style="font-size:12px;color:#0F6E56;margin-top:2px">Speed: 5–6 km/h · Incline: 6–8% · If upper body is very tired, go flat 6 km/h instead</div>
+  </div>
+</div>
+</div>
+
+<div id="fri" class="day-panel">
+<div class="day-title">Friday — Full Body + Core Burn</div>
+<div class="day-sub">Compound full-body circuit + core finisher &nbsp;|&nbsp; 60 min weights + 30 min cardio</div>
+
+<div class="ex-card">
+  <div class="ex-header"><div class="ex-num">1</div><div class="ex-name">Goblet Squat (dumbbell)</div></div>
+  <div class="ex-meta"><span class="pill pill-g">4 sets × 15 reps</span><span class="pill pill-b">Rest 60 sec</span><span class="pill pill-a">Light–Moderate</span></div>
+  <div class="section-label">how to do it</div>
+  <ul class="form-steps">
+    <li>Hold one dumbbell vertically at your chest with both hands (like a goblet)</li>
+    <li>Feet shoulder-width, toes pointing out 30–45°</li>
+    <li>Squat down — chest up, knees pushed outward over toes</li>
+    <li>Go as deep as comfortable (aim for thighs parallel to floor)</li>
+    <li>Drive through heels to stand back up, squeeze glutes at top</li>
+  </ul>
+  <div class="section-label">alternatives</div>
+  <div class="alts"><span class="alt-tag">Leg Press</span><span class="alt-tag">Smith Machine Squat</span><span class="alt-tag">Bodyweight Squat</span></div>
+</div>
+
+<div class="ex-card">
+  <div class="ex-header"><div class="ex-num">2</div><div class="ex-name">Dumbbell Romanian Deadlift (RDL)</div></div>
+  <div class="ex-meta"><span class="pill pill-g">3 sets × 12 reps</span><span class="pill pill-b">Rest 75 sec</span><span class="pill pill-a">Light–Moderate</span></div>
+  <div class="section-label">how to do it</div>
+  <ul class="form-steps">
+    <li>Stand holding dumbbells in front of you, feet hip-width apart</li>
+    <li>Slight bend in knees — keep it throughout, this is NOT a squat</li>
+    <li>Hinge at hips — push your butt backward, let dumbbells slide down your legs</li>
+    <li>Lower until you feel a stretch in your hamstrings (usually mid-shin level)</li>
+    <li>Drive your hips forward to stand back up — squeeze glutes at the top</li>
+  </ul>
+  <div class="section-label">alternatives</div>
+  <div class="alts"><span class="alt-tag">Leg Curl Machine</span><span class="alt-tag">Cable Pull-through</span><span class="alt-tag">Kettlebell Swing</span></div>
+</div>
+
+<div class="ex-card">
+  <div class="ex-header"><div class="ex-num">3</div><div class="ex-name">Cable Crossover / Chest Fly</div></div>
+  <div class="ex-meta"><span class="pill pill-g">3 sets × 15 reps</span><span class="pill pill-b">Rest 45 sec</span><span class="pill pill-a">Very light</span></div>
+  <div class="section-label">how to do it</div>
+  <ul class="form-steps">
+    <li>Set cables to high position, stand in the middle of the machine</li>
+    <li>Hold both handles, step forward, arms spread wide — slight bend in elbows</li>
+    <li>Bring hands together in front of your chest in a hugging arc motion</li>
+    <li>Hold for 1 sec squeezing your chest, then slowly open arms back out</li>
+    <li>Keep elbows slightly bent throughout — never fully straight</li>
+  </ul>
+  <div class="section-label">alternatives</div>
+  <div class="alts"><span class="alt-tag">Dumbbell Chest Fly</span><span class="alt-tag">Pec Deck Machine</span><span class="alt-tag">Low Cable Fly</span></div>
+</div>
+
+<div class="ex-card">
+  <div class="ex-header"><div class="ex-num">4</div><div class="ex-name">Core Finisher Circuit</div></div>
+  <div class="ex-meta"><span class="pill pill-g">3 rounds — no rest between exercises</span><span class="pill pill-b">Rest 60 sec between rounds</span></div>
+  <div class="section-label">circuit (do these back to back)</div>
+  <ul class="form-steps">
+    <li>Plank — 45 seconds</li>
+    <li>Bicycle Crunches — 20 reps (10 each side)</li>
+    <li>Leg Raises (lying flat, raise legs to 90°) — 15 reps</li>
+    <li>Russian Twist (bodyweight or light plate) — 20 reps</li>
+  </ul>
+  <div class="section-label">alternatives</div>
+  <div class="alts"><span class="alt-tag">Ab Wheel Rollout</span><span class="alt-tag">Cable Crunch</span><span class="alt-tag">Hanging Knee Raise</span></div>
+</div>
+
+<div class="cardio-box">
+  <i class="ti ti-run" style="font-size:24px;color:#0F6E56" aria-hidden="true"></i>
+  <div>
+    <div style="font-size:14px;font-weight:500;color:#085041">30 min incline walk — end of week burnout</div>
+    <div style="font-size:12px;color:#0F6E56;margin-top:2px">Speed: 5.5–6.5 km/h · Incline: 6–10% · Push a bit harder today since tomorrow is rest</div>
+  </div>
+</div>
+</div>
+
+</div>
+
+<script>
+function showDay(id, btn) {
+  document.querySelectorAll('.day-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
